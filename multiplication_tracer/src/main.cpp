@@ -1,3 +1,4 @@
+#define SDL_MAIN_HANDLED
 #include <iostream>
 #include <exception>
 #include <SDL2/SDL.h>
@@ -26,7 +27,7 @@ public:
     {
         if (SDL_Init(SDL_INIT_VIDEO)) { throw std::runtime_error("SLD2 can't be initilized\n"); }
 
-        _window = SDL_CreateWindow("CECI est une super fenetre du swag", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowX<int>, windowY<int>, SDL_WINDOW_SHOWN);
+        _window = SDL_CreateWindow("ass renderer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowX<int>, windowY<int>, SDL_WINDOW_SHOWN);
         if (!_window) { throw std::runtime_error("the window cannot be created\n"); }
 
         _renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
